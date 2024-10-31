@@ -40,7 +40,7 @@ python main.py --stocks TICKER1:QUANTITY1 TICKER2:QUANTITY2 ... --start_date YYY
 
 ## Parameters
 
-- `--stocks`: A space-separated list of stock tickers and their corresponding quantities in the format TICKER:QUANTITY. For example, `AAPL:10 MSFT:5`.
+- `--stocks`: A space-separated list of stock tickers and their corresponding quantities in the format `TICKER:QUANTITY`. For example, `AAPL:10 MSFT:5`.
 - `--start_date`: The start date for the calculation in the format `YYYY-MM-DD`.
 - `--end_date`: The end date for the calculation in the format `YYYY-MM-DD`.
 
