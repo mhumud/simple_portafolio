@@ -15,26 +15,26 @@ This tool allows you to calculate the profit and annualized return of a stock po
 ## Installation
 
 1. Clone the repository:
-    ```bash
+    ```
     git clone https://github.com/mhumud/portfolio_calculator.git
     cd portfolio_calculator
     ```
 
 2. Create a virtual environment and activate it:
-    ```bash
+    ```
     python -m venv venv
     source venv/bin/activate
     ```
 
 3. Install the dependencies:
-    ```bash
+    ```
     pip install -r requirements.txt
     ```
 
 ## Usage
 
 To use the portfolio calculator, run the script with the following command-line arguments:
-```bash
+```
 python main.py --stocks TICKER1:QUANTITY1 TICKER2:QUANTITY2 ... --start_date YYYY-MM-DD --end_date YYYY-MM-DD
 ```
 
@@ -47,14 +47,14 @@ python main.py --stocks TICKER1:QUANTITY1 TICKER2:QUANTITY2 ... --start_date YYY
 ## Example
 
 To calculate the profit and annualized return for a portfolio containing 10 shares of Apple (AAPL) and 5 shares of Microsoft (MSFT) from January 1, 2023, to December 31, 2023, run:
-```bash
+```
 python main.py --stocks AAPL:10 MSFT:5 --start_date 2023-01-01 --end_date 2023-12-31
 ```
 
 ## Output
 
 The tool will output the calculated profit and annualized return:
-```txt
+```
 Profit: <calculated profit>
 Annualized Return: <calculated annualized return>
 ```
