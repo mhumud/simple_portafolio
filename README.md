@@ -61,4 +61,4 @@ Annualized Return: <calculated annualized return>
 
 ## Why yfinance?
 
-I chose the `yfinance` library for its simplicity and ease of use. It provides straightforward access to historical stock data without requiring API keys, making it accessible for quick calculations and prototyping. The library handles data retrieval seamlessly, allowing for a focus on portfolio analysis rather than setup complexities.
+`yfinance` library was chosen for its simplicity and ease of use. It provides straightforward access to historical stock data without requiring API keys, making it accessible for quick calculations and prototyping. The library handles data retrieval seamlessly, allowing for a focus on portfolio analysis rather than setup complexities.
