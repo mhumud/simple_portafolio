@@ -33,6 +33,10 @@ class Portfolio:
         self.stocks.append((stock, quantity))
 
     def profit(self, start_date: datetime, end_date: datetime) -> float:
+        days = (end_date - start_date).days
+        if days <= 0:
+            return 0.0
+
         start_value = sum(stock.price(start_date) * quantity for stock, quantity in self.stocks)
         end_value = sum(stock.price(end_date) * quantity for stock, quantity in self.stocks)
         return end_value - start_value
@@ -44,26 +48,16 @@ class Portfolio:
         days = (end_date - start_date).days
         if days <= 0 or start_value <= 0:
             return 0.0
-        
+
+        # Calculate annualized return
         annualized_return = ((profit / start_value) + 1) ** (365 / days) - 1
         return annualized_return
-
-# portfolio = Portfolio()
-# portfolio.add_stock(Stock("AAPL"), 10)
-# portfolio.add_stock(Stock("MSFT"), 5)
-
-# start_date = datetime(2023, 1, 1)
-# end_date = datetime(2023, 12, 31)
-
-# print("Profit:", portfolio.profit(start_date, end_date))
-# print("Annualized Return:", portfolio.annualized_return(start_date, end_date))
 
 def main():
     parser = argparse.ArgumentParser(description="Calculate Portfolio Profit and Annualized Return.")
     parser.add_argument('--stocks', nargs='+', required=True, help="Stock tickers and quantities in the format 'TICKER:QUANTITY'.")
     parser.add_argument('--start_date', type=str, required=True, help="Start date in YYYY-MM-DD format.")
     parser.add_argument('--end_date', type=str, required=True, help="End date in YYYY-MM-DD format.")
-
     args = parser.parse_args()
 
     # Parse dates
@@ -72,7 +66,6 @@ def main():
         end_date = datetime.strptime(args.end_date, "%Y-%m-%d")
     except Exception as e:
         raise Exception(f"Error parsing dates: {e}")
-
 
     # Create portfolio and add stocks
     portfolio = Portfolio()
