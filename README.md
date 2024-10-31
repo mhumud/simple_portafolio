@@ -11,7 +11,6 @@ This tool allows you to calculate the profit and annualized return of a stock po
 ## Requirements
 
 - Python 3.6 or higher
-- `yfinance` library
 
 ## Installation
 
@@ -27,7 +26,7 @@ This tool allows you to calculate the profit and annualized return of a stock po
     source venv/bin/activate
     ```
 
-2. Create a virtual environment and activate it:
+3. Install the dependencies:
     ```bash
     pip install -r requirements.txt
     ```
